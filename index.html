@@ -3,65 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Gourmet Spot - Menu</title>
+    <title>The Grand Pakistani Spot - Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Modern, High-Contrast Color Palette */
+        /* Pakistani Inspired Color Palette */
         :root {
-            --primary-color: #A34A23; /* Rich Terracotta/Rust - Elegant Accent */
-            --secondary-color: #FAF4E8; /* Off-White/Cream - Background */
-            --dark-color: #212529; /* Dark Charcoal - Text/Navbar */
-            --accent-color: #4CAF50; /* Green - Action/Success Color (e.g., Add to Cart) */
-            --font-serif: 'Playfair Display', serif;
+            --primary-color: #004d40; /* Deep Teal/Emerald Green - Represents richness */
+            --secondary-color: #ffc107; /* Bright Gold/Yellow - Represents luxury */
+            --dark-color: #2c3e50; /* Dark Navy/Charcoal - Represents professionalism */
+            --light-color: #f8f8f8; /* Off-White/Cream - Background */
+            --accent-color: #e67e22; /* Burnt Orange/Saffron - For call-to-action */
+            --font-serif: 'Amiri', serif;
             --font-sans: 'Roboto', sans-serif;
         }
 
         body {
             font-family: var(--font-sans);
-            background-color: var(--secondary-color);
-            padding-top: 60px; /* Space for fixed navbar */
+            background-color: var(--light-color);
+            padding-top: 60px;
         }
 
         /* Navbar Styling */
         .navbar {
             background-color: var(--dark-color) !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
         .navbar-brand {
             font-family: var(--font-serif);
-            font-size: 1.8rem !important;
+            font-size: 2rem !important;
             color: var(--secondary-color) !important;
         }
         .nav-link {
-            color: var(--secondary-color) !important;
+            color: var(--light-color) !important;
             font-weight: 500;
         }
         .nav-link:hover {
-            color: var(--primary-color) !important;
+            color: var(--secondary-color) !important;
         }
 
-        /* Header/Jumbotron Styling */
+        /* Header/Hero Section */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544025166-f13d4c6d36e8?fit=crop&w=1200&q=80') no-repeat center center;
+            /* Replace with a relevant Pakistani food or city landscape image */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582235948792-668516d0932c?fit=crop&w=1400&q=80') no-repeat center center;
             background-size: cover;
             color: white;
-            padding: 80px 0; /* Reduced padding for mobile */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            padding: 100px 0; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
             margin-bottom: 40px;
         }
         .hero-section h1 {
             font-family: var(--font-serif);
-            font-size: 3rem; /* Adjusted for mobile */
-        }
-        @media (min-width: 768px) {
-            .hero-section {
-                padding: 120px 0;
-            }
-            .hero-section h1 {
-                font-size: 4.5rem;
-            }
+            font-size: 4rem;
+            letter-spacing: 2px;
         }
 
         /* Menu Section Title */
@@ -69,66 +64,71 @@
             font-family: var(--font-serif);
             color: var(--primary-color);
             margin-bottom: 30px;
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 4px solid var(--secondary-color);
             display: inline-block;
             padding-bottom: 5px;
+            font-weight: 700;
         }
 
-        /* Menu Card Styling - Enhanced for mobile */
+        /* Menu Card Styling */
         .menu-card {
             background-color: white;
-            border: none; /* Removed border */
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--secondary-color); 
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
             height: 100%;
         }
         .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .menu-title {
-            color: var(--dark-color);
+            color: var(--primary-color);
             font-family: var(--font-serif);
             font-weight: 700;
         }
 
         .menu-description {
-            color: #6c757d; /* Lighter text for description */
-            font-size: 0.95em;
+            color: #5a5a5a;
+            font-size: 0.9em;
         }
 
         .price {
-            font-size: 1.5em;
-            color: var(--primary-color);
+            font-size: 1.6em;
+            color: var(--accent-color);
             font-weight: bold;
         }
-
-        /* Order Button Styling */
+        
+        /* Action Button Styling */
         .btn-add-to-cart {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--dark-color);
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-add-to-cart:hover {
             background-color: var(--accent-color);
             border-color: var(--accent-color);
             color: white;
-            font-weight: 500;
-            padding: 8px 15px; /* Better size for mobile tapping */
-            transition: background-color 0.3s ease;
         }
-        .btn-add-to-cart:hover {
-            background-color: #388E3C; /* Darker green */
-            border-color: #388E3C;
-            color: white;
-        }
-        
+
         /* Footer Styling */
         footer {
             background-color: var(--dark-color);
-            color: var(--secondary-color);
+            color: var(--light-color);
             padding: 30px 0;
             margin-top: 50px;
         }
         footer p {
             margin-bottom: 0.5rem;
+        }
+        .currency {
+            font-size: 0.8em;
+            vertical-align: top;
+            margin-right: -2px;
         }
     </style>
 </head>
@@ -136,7 +136,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">🍽️ The Gourmet Spot</a>
+            <a class="navbar-brand" href="#">👑 The Grand Pakistani Spot</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -146,13 +146,15 @@
                         <a class="nav-link active" aria-current="page" href="#menu">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="#">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Reservations</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <button class="btn btn-outline-light mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#orderModal">🛒 View Cart</button>
+                        <button class="btn btn-outline-warning mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#orderModal" id="viewCartBtn">
+                            🛒 Cart (<span id="cartItemCount">0</span>)
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -161,80 +163,80 @@
 
     <header class="hero-section text-center">
         <div class="container">
-            <h1 class="fw-bold">Experience Gourmet Dining</h1>
-            <p class="lead mt-3">Crafted dishes. Exceptional taste. Browse our menu below.</p>
+            <h1 class="fw-bold">A Taste of Heritage</h1>
+            <p class="lead mt-3 fs-5">Experience the authentic flavors of Pakistan, crafted with tradition.</p>
         </div>
     </header>
 
     <main id="menu" class="container">
         
         <div class="text-center mb-5">
-            <h2 class="section-title">Appetizers & Main Courses</h2>
+            <h2 class="section-title">Royal Entrees (Main Course)</h2>
         </div>
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Truffle Parmesan Fries 🍟</h5>
-                    <p class="menu-description flex-grow-1">Crispy fries tossed in luxurious truffle oil, topped with fresh Parmesan cheese and a hint of parsley.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Lahori Chicken Biryani" data-price="750">
+                    <h5 class="menu-title">Lahori Chicken Biryani 🍚🌶️</h5>
+                    <p class="menu-description flex-grow-1">Aromatic basmati rice cooked with tender chicken pieces, layered with traditional spices, potatoes, and saffron.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$8.99</span>
+                        <span class="price"><span class="currency">Rs.</span>750</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Pan-Seared Salmon Fillet 🐟</h5>
-                    <p class="menu-description flex-grow-1">Atlantic salmon served with perfectly roasted asparagus and a zesty lemon-dill butter sauce.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Mutton Karahi" data-price="1200">
+                    <h5 class="menu-title">Mutton Karahi (Half Kg) 🐐</h5>
+                    <p class="menu-description flex-grow-1">Slow-cooked mutton in a rich tomato base, green chilies, ginger, and freshly ground spices. Served sizzling.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$24.50</span>
+                        <span class="price"><span class="currency">Rs.</span>1,200</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Signature Ribeye Steak (12 oz) 🥩</h5>
-                    <p class="menu-description flex-grow-1">A tender, 12 oz ribeye seasoned and seared, served with creamy garlic mashed potatoes and seasonal vegetables.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Special Beef Haleem" data-price="680">
+                    <h5 class="menu-title">Special Beef Haleem (Winter Special) 🥣</h5>
+                    <p class="menu-description flex-grow-1">A hearty stew of shredded beef, wheat, barley, and lentils, garnished with fried onions, ginger, and lime.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$32.00</span>
+                        <span class="price"><span class="currency">Rs.</span>680</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Wild Mushroom Risotto (V) 🍚</h5>
-                    <p class="menu-description flex-grow-1">Creamy Arborio rice slow-cooked with a blend of exotic wild mushrooms and aromatic white wine reduction.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Chicken Seekh Kebab Platter" data-price="950">
+                    <h5 class="menu-title">Chicken Seekh Kebab Platter 🔥</h5>
+                    <p class="menu-description flex-grow-1">Two perfectly grilled minced chicken skewers marinated in herbs and spices. Served with mint raita.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$18.75</span>
+                        <span class="price"><span class="currency">Rs.</span>950</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
             
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Classic Chicken Marsala 🍗</h5>
-                    <p class="menu-description flex-grow-1">Lightly floured chicken cutlets braised with Marsala wine and mushrooms, served over linguine pasta.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Daal Makhani (V)" data-price="550">
+                    <h5 class="menu-title">Daal Makhani (Vegetarian) 🌿</h5>
+                    <p class="menu-description flex-grow-1">Black lentils slow-cooked overnight and finished with cream and butter. Served with a Tandoori Roti.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$21.99</span>
+                        <span class="price"><span class="currency">Rs.</span>550</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
             
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Caprese Skewers (Aperitivo) 🍅</h5>
-                    <p class="menu-description flex-grow-1">Fresh mozzarella, cherry tomatoes, and basil leaves drizzled with aged balsamic glaze.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Aloo Pulao" data-price="480">
+                    <h5 class="menu-title">Aloo Pulao (Potato Rice) 🥔</h5>
+                    <p class="menu-description flex-grow-1">Fluffy basmati rice cooked in a subtle stock with potatoes, green peas, and light spices. Ideal for kids.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$11.50</span>
+                        <span class="price"><span class="currency">Rs.</span>480</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
@@ -242,50 +244,50 @@
         </div> 
 
         <div class="text-center mt-5 mb-5">
-            <h2 class="section-title">Desserts & Refreshments</h2>
+            <h2 class="section-title">Mithaai & Drinks</h2>
         </div>
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
             
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Chocolate Lava Cake 🍫</h5>
-                    <p class="menu-description flex-grow-1">Warm, decadent chocolate cake with a molten center, served with a scoop of vanilla bean ice cream.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Hot Gulab Jamun (2 pcs)" data-price="350">
+                    <h5 class="menu-title">Hot Gulab Jamun (2 pcs) 🍩</h5>
+                    <p class="menu-description flex-grow-1">Milk-solids based dumplings soaked in a rose-flavored sugar syrup. Served warm.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$9.50</span>
+                        <span class="price"><span class="currency">Rs.</span>350</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">New York Cheesecake 🍰</h5>
-                    <p class="menu-description flex-grow-1">Rich, dense, and creamy cheesecake with a graham cracker crust, topped with fresh strawberries.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Traditional Kheer" data-price="400">
+                    <h5 class="menu-title">Traditional Kheer (Rice Pudding) 🥛</h5>
+                    <p class="menu-description flex-grow-1">Slow-cooked rice pudding flavored with cardamom, topped with pistachios and almonds.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$8.50</span>
+                        <span class="price"><span class="currency">Rs.</span>400</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Sparkling Mojito (NA) 🍹</h5>
-                    <p class="menu-description flex-grow-1">Refreshing mix of muddled fresh mint, zesty lime juice, simple syrup, and sparkling water.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Sweet/Salty Lassi" data-price="250">
+                    <h5 class="menu-title">Sweet/Salty Lassi 🥤</h5>
+                    <p class="menu-description flex-grow-1">Traditional yogurt-based drink, rich and creamy. Choose between sweet or slightly salty.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$6.00</span>
+                        <span class="price"><span class="currency">Rs.</span>250</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
-                <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Artisan Espresso ☕</h5>
-                    <p class="menu-description flex-grow-1">A perfectly extracted shot of our signature blend, robust and full of flavor.</p>
+                <div class="menu-card p-4 d-flex flex-column" data-name="Doodh Patti Chai" data-price="180">
+                    <h5 class="menu-title">Doodh Patti Chai ☕</h5>
+                    <p class="menu-description flex-grow-1">Strong milk tea boiled to perfection, a perfect end to any meal.</p>
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                        <span class="price">$4.00</span>
+                        <span class="price"><span class="currency">Rs.</span>180</span>
                         <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
@@ -296,8 +298,8 @@
     
     <footer>
         <div class="container text-center">
-            <p class="fw-bold mb-1">The Gourmet Spot</p>
-            <p>&copy; 2025 All rights reserved. | Crafted with care.</p>
+            <p class="fw-bold mb-1">The Grand Pakistani Spot | Order Now!</p>
+            <p>&copy; 2025 All rights reserved. | Built with pride in Pakistan.</p>
         </div>
     </footer>
 
@@ -305,21 +307,114 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h5 class="modal-title" id="orderModalLabel">🛒 Your Current Order (Cart)</h5>
+                    <h5 class="modal-title" id="orderModalLabel">🛒 Your Current Order</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Items added to cart will appear here.</p>
-                    <p class="text-muted small">**Note:** For this front-end template, this serves as the placeholder for the functional shopping cart and checkout system.</p>
+                    <div id="cartItemsContainer">
+                        <p class="text-muted text-center" id="emptyCartMessage">Your cart is currently empty. Start ordering!</p>
+                    </div>
+
+                    <div id="cartSummary" class="mt-4 pt-3 border-top">
+                        <div class="cart-item">
+                            <span>**Subtotal:**</span>
+                            <span id="cartSubtotal" class="cart-total"><span class="currency">Rs.</span>0</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
-                    <button type="button" class="btn btn-success">Proceed to Checkout</button>
+                    <button type="button" class="btn btn-add-to-cart" id="checkoutBtn" disabled>Proceed to Checkout</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 1. Initialize Cart Array
+        let cart = [];
+
+        // 2. Add Item Function
+        function addItemToCart(itemName, itemPrice) {
+            const existingItem = cart.find(item => item.name === itemName);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: parseInt(itemPrice), // Use parseInt for Rupee values
+                    quantity: 1
+                });
+            }
+            updateCartDisplay();
+            // Provide instant feedback
+            alert(`${itemName} added to your cart!`);
+        }
+
+        // 3. Update Cart Display (Modal and Navbar)
+        function updateCartDisplay() {
+            const container = document.getElementById('cartItemsContainer');
+            const subtotalElement = document.getElementById('cartSubtotal');
+            const itemCountElement = document.getElementById('cartItemCount');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const emptyMessage = document.getElementById('emptyCartMessage');
+            
+            // Reset contents
+            container.innerHTML = '';
+            let subtotal = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                emptyMessage.style.display = 'block';
+                checkoutBtn.disabled = true;
+            } else {
+                emptyMessage.style.display = 'none';
+                checkoutBtn.disabled = false;
+            }
+
+            // Loop through cart items to build list and calculate total
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                totalItems += item.quantity;
+
+                const itemHtml = `
+                    <div class="cart-item">
+                        <div>
+                            <span class="fw-bold">${item.name}</span> 
+                            <span class="text-muted small">x ${item.quantity}</span>
+                        </div>
+                        <span class="fw-bold"><span class="currency">Rs.</span> ${itemTotal.toLocaleString('en-PK')}</span>
+                    </div>
+                `;
+                container.innerHTML += itemHtml;
+            });
+
+            // Update Total and Item Count
+            subtotalElement.innerHTML = `<span class="currency">Rs.</span> ${subtotal.toLocaleString('en-PK')}`;
+            itemCountElement.textContent = totalItems; 
+        }
+
+        // 4. Attach Event Listeners to "Add to Cart" buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const card = event.target.closest('.menu-card');
+                    const itemName = card.dataset.name;
+                    const itemPrice = card.dataset.price; // Price is stored as integer PKR
+                    
+                    addItemToCart(itemName, itemPrice);
+                });
+            });
+
+            // 5. Attach Event Listener to Modal (to ensure cart display is refreshed when opened)
+            const orderModal = document.getElementById('orderModal');
+            orderModal.addEventListener('show.bs.modal', updateCartDisplay);
+        });
+    </script>
 </body>
 </html>

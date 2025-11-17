@@ -3,139 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sultani Dastarkhwan - Pakistani Menu</title>
+    <title>The Gourmet Spot - Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* Pakistani Themed Colors */
+        /* Modern, High-Contrast Color Palette */
         :root {
-            --primary-color: #006847; /* Deep Green */
-            --secondary-color: #FFDE00; /* Rich Gold */
-            --dark-color: #2c2c2c;
-            --light-color: #f7f7f7;
+            --primary-color: #A34A23; /* Rich Terracotta/Rust - Elegant Accent */
+            --secondary-color: #FAF4E8; /* Off-White/Cream - Background */
+            --dark-color: #212529; /* Dark Charcoal - Text/Navbar */
+            --accent-color: #4CAF50; /* Green - Action/Success Color (e.g., Add to Cart) */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Roboto', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light-color);
-            padding-top: 56px; /* Space for fixed navbar */
+            font-family: var(--font-sans);
+            background-color: var(--secondary-color);
+            padding-top: 60px; /* Space for fixed navbar */
         }
 
         /* Navbar Styling */
         .navbar {
             background-color: var(--dark-color) !important;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .navbar-brand, .nav-link {
+        .navbar-brand {
+            font-family: var(--font-serif);
+            font-size: 1.8rem !important;
             color: var(--secondary-color) !important;
+        }
+        .nav-link {
+            color: var(--secondary-color) !important;
+            font-weight: 500;
         }
         .nav-link:hover {
             color: var(--primary-color) !important;
-            background-color: rgba(255, 222, 0, 0.1);
-            border-radius: 5px;
-        }
-        .btn-navbar-order {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white !important;
-        }
-        .btn-navbar-order:hover {
-            background-color: #004d33;
-            border-color: #004d33;
         }
 
         /* Header/Jumbotron Styling */
         .hero-section {
-            background: url('https://images.unsplash.com/photo-1596700683050-61f6c44243a3?fit=crop&w=1200&q=80') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544025166-f13d4c6d36e8?fit=crop&w=1200&q=80') no-repeat center center;
             background-size: cover;
             color: white;
-            padding: 80px 0; /* Reduced padding for better mobile viewing */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
-            margin-bottom: 30px;
-            border-radius: 0 0 15px 15px;
+            padding: 80px 0; /* Reduced padding for mobile */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            margin-bottom: 40px;
         }
-        /* Mobile adjustment for smaller screens */
-        @media (max-width: 576px) {
+        .hero-section h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem; /* Adjusted for mobile */
+        }
+        @media (min-width: 768px) {
             .hero-section {
-                padding: 60px 0;
+                padding: 120px 0;
             }
             .hero-section h1 {
-                font-size: 2.5rem; /* Smaller title on mobile */
+                font-size: 4.5rem;
             }
         }
 
-        /* Menu Card Styling */
+        /* Menu Section Title */
+        .section-title {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Menu Card Styling - Enhanced for mobile */
         .menu-card {
             background-color: white;
-            border-left: 5px solid var(--primary-color); /* Highlight with primary color */
+            border: none; /* Removed border */
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            height: 100%; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
         .menu-card:hover {
-            transform: scale(1.02); /* More noticeable lift on hover */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .menu-title {
             color: var(--dark-color);
-            font-weight: 600;
-            border-bottom: 1px dashed var(--secondary-color);
-            padding-bottom: 5px;
+            font-family: var(--font-serif);
+            font-weight: 700;
         }
 
         .menu-description {
-            color: #555;
-            font-size: 0.85em;
-            line-height: 1.4;
+            color: #6c757d; /* Lighter text for description */
+            font-size: 0.95em;
         }
 
         .price {
-            font-size: 1.3em;
+            font-size: 1.5em;
             color: var(--primary-color);
-            font-weight: 700;
+            font-weight: bold;
         }
 
         /* Order Button Styling */
-        .btn-order {
-            background-color: var(--secondary-color);
-            border: 1px solid var(--secondary-color);
-            color: var(--dark-color);
-            font-weight: 600;
+        .btn-add-to-cart {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+            padding: 8px 15px; /* Better size for mobile tapping */
             transition: background-color 0.3s ease;
         }
-        .btn-order:hover {
-            background-color: var(--primary-color); 
-            border-color: var(--primary-color);
+        .btn-add-to-cart:hover {
+            background-color: #388E3C; /* Darker green */
+            border-color: #388E3C;
             color: white;
         }
-
-        /* Section Header */
-        .section-header {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .section-header::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            border-radius: 2px;
-        }
-
+        
         /* Footer Styling */
         footer {
             background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 25px 0;
+            color: var(--secondary-color);
+            padding: 30px 0;
             margin-top: 50px;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -143,20 +136,23 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-4" href="#">⭐ Sultani Dastarkhwan</a>
+            <a class="navbar-brand" href="#">🍽️ The Gourmet Spot</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#pakistani-specials">Pakistani Specials</a>
+                        <a class="nav-link active" aria-current="page" href="#menu">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#main-courses">Global Mains</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-navbar-order ms-lg-3" data-bs-toggle="modal" data-bs-target="#orderModal">Place Order (0)</button>
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#orderModal">🛒 View Cart</button>
                     </li>
                 </ul>
             </div>
@@ -165,106 +161,132 @@
 
     <header class="hero-section text-center">
         <div class="container">
-            <h1 class="display-3 fw-bold">ذائقہ ہمارا، روایت آپکی</h1>
-            <p class="lead mt-3">Experience the authentic flavors of Pakistan, crafted with tradition and passion.</p>
+            <h1 class="fw-bold">Experience Gourmet Dining</h1>
+            <p class="lead mt-3">Crafted dishes. Exceptional taste. Browse our menu below.</p>
         </div>
     </header>
 
-    <main class="container">
-
-        <h2 id="pakistani-specials" class="text-center section-header display-5">🇵🇰 Pakistani & Mughlai Specials</h2>
+    <main id="menu" class="container">
+        
+        <div class="text-center mb-5">
+            <h2 class="section-title">Appetizers & Main Courses</h2>
+        </div>
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Chicken Biryani 🍛</h5>
-                    <p class="menu-description flex-grow-1">Aromatic basmati rice cooked with succulent chicken pieces, rich spices, and potatoes. Served with raita.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 450</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Truffle Parmesan Fries 🍟</h5>
+                    <p class="menu-description flex-grow-1">Crispy fries tossed in luxurious truffle oil, topped with fresh Parmesan cheese and a hint of parsley.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$8.99</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Lahori Beef Nihari 🥣</h5>
-                    <p class="menu-description flex-grow-1">Slow-cooked beef stew in a rich, spicy gravy. Garnished with ginger, green chilies, and fresh lime.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 620</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Pan-Seared Salmon Fillet 🐟</h5>
+                    <p class="menu-description flex-grow-1">Atlantic salmon served with perfectly roasted asparagus and a zesty lemon-dill butter sauce.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$24.50</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Mutton Karahi 🌶️</h5>
-                    <p class="menu-description flex-grow-1">Fresh mutton cooked in a traditional iron wok (karahi) with tomatoes, ginger, and green chillies.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 850</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Signature Ribeye Steak (12 oz) 🥩</h5>
+                    <p class="menu-description flex-grow-1">A tender, 12 oz ribeye seasoned and seared, served with creamy garlic mashed potatoes and seasonal vegetables.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$32.00</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Malai Boti & Seekh Kebab Platter</h5>
-                    <p class="menu-description flex-grow-1">Two skewers of spicy seekh kebab and two skewers of creamy malai chicken boti. Served with fresh naan.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 700</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Wild Mushroom Risotto (V) 🍚</h5>
+                    <p class="menu-description flex-grow-1">Creamy Arborio rice slow-cooked with a blend of exotic wild mushrooms and aromatic white wine reduction.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$18.75</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
             
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Badami Kheer 🍚</h5>
-                    <p class="menu-description flex-grow-1">A traditional, slow-cooked rice pudding, infused with cardamom and topped with crushed almonds (badam).</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 250</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Classic Chicken Marsala 🍗</h5>
+                    <p class="menu-description flex-grow-1">Lightly floured chicken cutlets braised with Marsala wine and mushrooms, served over linguine pasta.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$21.99</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
             
             <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Garlic Naan (Basket) 🫓</h5>
-                    <p class="menu-description flex-grow-1">Freshly baked, fluffy naan bread brushed with garlic butter and cilantro. Perfect for scooping gravy.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 150</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Caprese Skewers (Aperitivo) 🍅</h5>
+                    <p class="menu-description flex-grow-1">Fresh mozzarella, cherry tomatoes, and basil leaves drizzled with aged balsamic glaze.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$11.50</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="text-center mt-5 mb-5">
+            <h2 class="section-title">Desserts & Refreshments</h2>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+            
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Chocolate Lava Cake 🍫</h5>
+                    <p class="menu-description flex-grow-1">Warm, decadent chocolate cake with a molten center, served with a scoop of vanilla bean ice cream.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$9.50</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
-        </div> <hr class="my-5">
-
-        <h2 id="main-courses" class="text-center section-header display-5">🌍 Global Favorites</h2>
-         <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-
-            <div class="col-md-5">
+            <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Black Pepper Steak 🥩</h5>
-                    <p class="menu-description flex-grow-1">Grilled tenderloin steak served with a rich black pepper sauce, mashed potatoes, and sautéed vegetables.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 1250</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">New York Cheesecake 🍰</h5>
+                    <p class="menu-description flex-grow-1">Rich, dense, and creamy cheesecake with a graham cracker crust, topped with fresh strawberries.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$8.50</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-5">
+            <div class="col">
                 <div class="menu-card p-4 d-flex flex-column">
-                    <h5 class="menu-title">Classic Caesar Salad 🥗</h5>
-                    <p class="menu-description flex-grow-1">Fresh romaine lettuce, Parmesan cheese, croutons, and creamy Caesar dressing. Add grilled chicken (Rs. 200).</p>
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <span class="price">Rs. 550</span>
-                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    <h5 class="menu-title">Sparkling Mojito (NA) 🍹</h5>
+                    <p class="menu-description flex-grow-1">Refreshing mix of muddled fresh mint, zesty lime juice, simple syrup, and sparkling water.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$6.00</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Artisan Espresso ☕</h5>
+                    <p class="menu-description flex-grow-1">A perfectly extracted shot of our signature blend, robust and full of flavor.</p>
+                    <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                        <span class="price">$4.00</span>
+                        <button class="btn btn-add-to-cart btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -274,25 +296,25 @@
     
     <footer>
         <div class="container text-center">
-            <p class="mb-1">&copy; 2025 Sultani Dastarkhwan. Crafted with the spirit of Pakistan.</p>
-            <small>Contact us for catering: +92 51 XXX-XXXX</small>
+            <p class="fw-bold mb-1">The Gourmet Spot</p>
+            <p>&copy; 2025 All rights reserved. | Crafted with care.</p>
         </div>
     </footer>
 
     <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title" id="orderModalLabel">✅ Your Shopping Cart</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title" id="orderModalLabel">🛒 Your Current Order (Cart)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>This modal confirms that your "Place Order" button works!</p>
-                    <p class="text-muted small">In a real application, this would show the list of items you added and the total price.</p>
+                    <p>Items added to cart will appear here.</p>
+                    <p class="text-muted small">**Note:** For this front-end template, this serves as the placeholder for the functional shopping cart and checkout system.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep Shopping</button>
-                    <button type="button" class="btn btn-order">Checkout Now</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-success">Proceed to Checkout</button>
                 </div>
             </div>
         </div>

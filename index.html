@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gourmet Spot - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #A64724; /* Dark Copper/Brown */
+            --secondary-color: #F8D58B; /* Light Gold/Cream */
+            --dark-color: #2c2c2c;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--secondary-color);
+            padding-top: 56px; /* Space for fixed navbar */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--dark-color) !important;
+        }
+        .navbar-brand, .nav-link {
+            color: var(--secondary-color) !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Header/Jumbotron Styling */
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1544025166-f13d4c6d36e8?fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin-bottom: 30px;
+        }
+
+        /* Menu Card Styling */
+        .menu-card {
+            background-color: white;
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%; /* Ensure all cards in a row are the same height */
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-title {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .menu-description {
+            color: var(--dark-color);
+            font-size: 0.9em;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Order Button Styling */
+        .btn-order {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-order:hover {
+            background-color: #8C3E1F; /* A darker shade for hover */
+            border-color: #8C3E1F;
+            color: white;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--secondary-color);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="#">🍽️ The Gourmet Spot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-warning ms-lg-3" data-bs-toggle="modal" data-bs-target="#orderModal">Place Order</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-2 fw-bold">Our Signature Menu</h1>
+            <p class="lead mt-3">Savor the flavor of excellence with every dish.</p>
+        </div>
+    </header>
+
+    <main id="menu" class="container">
+        <h2 class="text-center mb-5 menu-title display-4">Appetizers & Main Courses</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Truffle Parmesan Fries 🍟</h5>
+                    <p class="menu-description flex-grow-1">Crispy fries tossed in truffle oil, topped with freshly grated Parmesan cheese and a hint of parsley.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$8.99</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Grilled Salmon Fillet 🐟</h5>
+                    <p class="menu-description flex-grow-1">Perfectly grilled Atlantic salmon served with roasted asparagus and a lemon-dill butter sauce.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$24.50</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Ribeye Steak (12 oz) 🥩</h5>
+                    <p class="menu-description flex-grow-1">A tender, 12 oz ribeye steak seasoned to perfection, served with garlic mashed potatoes and seasonal vegetables.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$32.00</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Mushroom Risotto (V) 🍚</h5>
+                    <p class="menu-description flex-grow-1">Creamy Arborio rice slow-cooked with assorted wild mushrooms and a touch of white wine.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$18.75</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Chocolate Lava Cake 🍫</h5>
+                    <p class="menu-description flex-grow-1">Warm, decadent chocolate cake with a molten center, served with a scoop of vanilla bean ice cream.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$9.50</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Classic Mojito (Non-Alcoholic) 🍹</h5>
+                    <p class="menu-description flex-grow-1">Refreshing mix of fresh mint, lime juice, simple syrup, and soda water.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$6.00</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> <h2 class="text-center mt-5 mb-5 menu-title display-5">Desserts</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+            <div class="col-md-5">
+                 <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">New York Cheesecake 🍰</h5>
+                    <p class="menu-description flex-grow-1">Rich, dense, and creamy cheesecake with a graham cracker crust, topped with fresh strawberries.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$8.50</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="menu-card p-4 d-flex flex-column">
+                    <h5 class="menu-title">Crème Brûlée 🔥</h5>
+                    <p class="menu-description flex-grow-1">A rich custard base topped with a layer of hardened caramelized sugar.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="price">$7.99</span>
+                        <button class="btn btn-order btn-sm">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 The Gourmet Spot. All rights reserved.</p>
+            <p>Built with ❤️ and Bootstrap.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is where your functional order form/shopping cart would go!</p>
+                    <p class="text-muted">For this assignment, this modal serves as the **front-end placeholder** for the order system.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-order">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
